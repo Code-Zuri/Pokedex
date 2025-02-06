@@ -24,7 +24,8 @@ export const usePokemonPaginated = () => {
       const id = urlParts[urlParts.length - 2];
       const picture = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
-      return { id, name, picture }
+      const types: string[] = []; // Add logic to fetch types if available
+      return { id, name, picture, types }
     });
     
     setSimplePokemonList( [ ...simplePokemonList, ...newPokemonList ] );
